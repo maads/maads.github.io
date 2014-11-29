@@ -12,9 +12,8 @@ This post will take us through the process of creating an addon for generating M
 
 By the end we will have a component that we can use like this
 
-    {{md-5 value='my string'}} // 2ba81a47c5512d9e23c435c1f29373cb
-
-
+    {{md-5 value='my string'}}
+    // 2ba81a47c5512d9e23c435c1f29373cb
 
 ## Creating an addon
 
@@ -107,6 +106,7 @@ If you want to test the addon in another project you can install it locally.
     // In the other project
     npm install ../ember-cli-md5
     ember g md-5
+
 
 ## Updating metadata
 Each npm package has some metadata like version and URL for the repository. This can be changed in `package.json`.
