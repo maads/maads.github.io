@@ -10,10 +10,7 @@ In **ember-cli** it is easy to reuse code by creating addons. Addons are Ember C
 
 This post will take us through the process of creating an addon for generating MD5 hashes given some input.
 
-By the end we will have a component that we can use like this
-
-    {{md-5 value='my string'}}
-    // 2ba81a47c5512d9e23c435c1f29373cb
+By the end we will have a component that we can use like this `{{md-5 value='my string'}}`
 
 ## Creating an addon
 
