@@ -135,3 +135,8 @@ Now that we have seen that the component does what we want, it is time to share 
 Now we are ready to do a publish
 
     npm publish
+
+The component is now ready to be installed via npm.
+
+    npm install --save-dev ember-cli-md5
+    ember g md-5
