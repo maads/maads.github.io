@@ -1,7 +1,7 @@
-----
+---
 layout: post
 title: Creating Ember CLI addons
-----
+---
 
 {{ page.title }}
 ================
