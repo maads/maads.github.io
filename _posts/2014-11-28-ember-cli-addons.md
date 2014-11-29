@@ -68,9 +68,9 @@ From within this component we can add the logic we want
 
 And we need a place to show this hashed value
 
-    // app/templates/components/md-5.hbs
     {% highlight html %}
     {% raw %}
+    // app/templates/components/md-5.hbs
     {{md5}}
     {% endraw %}
     {% endhighlight %}
