@@ -69,7 +69,11 @@ From within this component we can add the logic we want
 And we need a place to show this hashed value
 
     // app/templates/components/md-5.hbs
+    {% highlight html %}
+    {% raw %}
     {{md5}}
+    {% endraw %}
+    {% endhighlight %}
 
 
 The addon is almost complete. We just have to add the `blueprint` which tells the addon to download the javascript library. Up until now we have just referenced the downloaded version in `app.import(...)`, without specifying how the consumer of the addon should get the library.
@@ -93,6 +97,9 @@ This makes the installation a 2 step process. First installing the addon and the
 ## Check that it works
 When developing an addon you might want to test to see if it works. The addon comes with a folder called `tests/dummy` which has an application where we can use our components. Since this is a small addon we will use the component in `application.hbs`
 
+
+    {% highlight html %}
+    {% raw %}
     // tests/dummy/app/templates/application.hbs
     <h2 id='title'>MD5</h2>
     <div>
@@ -101,6 +108,8 @@ When developing an addon you might want to test to see if it works. The addon co
     <div>
       {{md-5 value=string}}
     </div>
+    {% endraw %}
+    {% endhighlight %}
 
 By running `ember server` we can now test that the component works by hashing input on the fly
 
