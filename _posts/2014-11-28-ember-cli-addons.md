@@ -14,8 +14,7 @@ By the end we will have a component that we can use like this
 
     {% highlight html %}
     {% raw %}
-    {{md-5 value='my string'}}
-    // 2ba81a47c5512d9e23c435c1f29373cb
+    {{md-5 value='my string'}} // 2ba81a47c5512d9e23c435c1f29373cb
     {% endraw %}
     {% endhighlight %}
 
