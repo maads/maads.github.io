@@ -2,6 +2,7 @@
 layout: post
 title: Creating Ember CLI addons
 ----
+
 {{ page.title }}
 ================
 In **ember-cli** it is easy to reuse code by creating addons. Addons are Ember Components that are published and shared with [npm](https://www.npmjs.org/).
