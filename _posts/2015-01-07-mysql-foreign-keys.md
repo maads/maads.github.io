@@ -21,5 +21,3 @@ List foreign keys for all tables:
     from INFORMATION_SCHEMA.KEY_COLUMN_USAGE
     where
     REFERENCED_TABLE_NAME is not null;
-
-Using MySQL Workbench, foreign keys can also be found in the GUI by right clicking the table name -> Alter table -> Foreign Keys (tab on the bottom)
