@@ -153,6 +153,12 @@ ul.posts {
 
 }
 
+#post img {
+  max-width:100% !important;
+  height:auto;
+  display:block;
+}
+
   /* standard */
 
   #post pre {
