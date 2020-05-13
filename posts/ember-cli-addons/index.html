@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    
+    Ember Cli Addons
+    
+  </title>
+  <link rel="stylesheet" href='https://xcv.no/css/site.min.79fe936623aa76027ec7f37e2c1f88575bc07ec92581712940e3dd619a002236e0522d1202b5d1f6df0ddca3a2aea9a163ce58001d960ed138f4f19e83fa83db.css' integrity='sha512-ef6TZiOqdgJ&#43;x/N&#43;LB&#43;IV1vAfsklgXEpQOPdYZoAIjbgUi0SArXR9t8N3KOirqmhY85YAB2WDtE49PGeg/qD2w=='>
+  <link rel="canonical" href="https://xcv.no/posts/ember-cli-addons/">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://xcv.no/index.xml" title="Mads">
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Mads">
+<meta name="description" content="In ember-cli it is easy to reuse code by creating addons. Addons are Ember Components that are published and shared with npm.
+This post will take us through the process of creating an addon for generating MD5 hashes given some input.
+By the end we will have a component that we can use like this
+{% highlight html %} {% raw %} {{md-5 value=&#39;my string&#39;}} // 2ba81a47c5512d9e23c435c1f29373cb {% endraw %} {% endhighlight %}  Creating an addon To generate the structure of an addon use">
+
+<meta property="og:title" content="Ember Cli Addons" />
+<meta property="og:description" content="In ember-cli it is easy to reuse code by creating addons. Addons are Ember Components that are published and shared with npm.
+This post will take us through the process of creating an addon for generating MD5 hashes given some input.
+By the end we will have a component that we can use like this
+{% highlight html %} {% raw %} {{md-5 value=&#39;my string&#39;}} // 2ba81a47c5512d9e23c435c1f29373cb {% endraw %} {% endhighlight %}  Creating an addon To generate the structure of an addon use" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xcv.no/posts/ember-cli-addons/" />
+<meta property="article:published_time" content="2014-11-28T19:00:00+02:00" />
+<meta property="article:modified_time" content="2014-11-28T19:00:00+02:00" />
+
+
+</head>
+<body><nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://xcv.no/">
+      <figure class="image">
+        <img alt="" class="is-rounded" src="https://www.gravatar.com/avatar/42bc34bdb73c7a6f9e28da7599b26ee9?s=128&d=identicon">
+      </figure>
+    </a>
+    <a class="navbar-item" href="https://xcv.no/">
+      Mads
+    </a>
+  </div>
+  
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      
+    </div>
+    
+    <div class="navbar-end">
+      
+      <a class="navbar-item" href="mailto:madstordalFJERNMEG@gmail.com" target="_blank">
+        <span class="icon">
+          <img alt="email" src='https://xcv.no/icons/svg/email.svg'>
+        </span>
+      </a>
+      <a class="navbar-item" href="https://xcv.no/index.xml" target="_blank">
+        <span class="icon">
+          <img alt="rss" src='https://xcv.no/icons/svg/rss.svg'>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+</nav>
+<section class="hero is-small is-info is-fullwidth">
+  <div class="hero-body">
+<div class="container">
+  <h1 class="title">
+    Ember Cli Addons
+  </h1>
+  <h2 class="subtitle">
+    <time datetime='2014-11-28T19:00:00&#43;02:00'>
+      November 28, 2014
+    </time>
+    
+  </h2>
+</div>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+<div class="content is-medium">
+  <p>In <strong>ember-cli</strong> it is easy to reuse code by creating addons. Addons are Ember Components that are published and shared with <a href="https://www.npmjs.org/">npm</a>.</p>
+<p>This post will take us through the process of creating an addon for generating MD5 hashes given some input.</p>
+<p>By the end we will have a component that we can use like this</p>
+<pre><code>{% highlight html %}
+{% raw %}
+{{md-5 value='my string'}} // 2ba81a47c5512d9e23c435c1f29373cb
+{% endraw %}
+{% endhighlight %}
+</code></pre>
+<h2 id="creating-an-addon">Creating an addon</h2>
+<p>To generate the structure of an addon use</p>
+<pre><code>ember addon ember-cli-md5
+</code></pre>
+<p>Note that we use <code>addon</code> instead of <code>new</code>.</p>
+<p>For this addon we need a library to generate MD5 hashes:</p>
+<pre><code>bower install --save blueimp-md5
+</code></pre>
+<p>Then we import the library in the <code>brocfile.js</code> to make the application testable from the application. By running <code>ember server</code> the application can be tested locally without publishing or installing it locally in another project. More on this later.</p>
+<pre><code>// brocfile.js
+app.import('bower_components/blueimp-md5/js/md5.min.js')
+module.exports = app.toTree();
+</code></pre>
+<p><code>Index.js</code> in the root folder is the entry point of the addon. Here we have to import the same library file again, this time so that the addon can consume it.</p>
+<pre><code>// index.js
+module.exports = {
+  name: 'ember-cli-md5',
+  included: function(app) {
+    this._super.included(app);
+
+    app.import('bower_components/blueimp-md5/js/md5.min.js');
+  }
+};
+</code></pre>
+<p>Lets start using this library by making the component.</p>
+<pre><code>ember g component md-5
+</code></pre>
+<p>From within this component we can add the logic we want</p>
+<pre><code>// app/components/md-5.js
+export default Ember.Component.extend({
+  value: null,
+  md5 : function(){
+    if(Ember.isEmpty(this.get('value'))){
+      return &quot;&quot;;
+    }
+    return md5(this.get('value'));
+  }.property('value')
+});
+</code></pre>
+<p>And we need a place to show this hashed value</p>
+<pre><code>{% highlight html %}
+{% raw %}
+// app/templates/components/md-5.hbs
+{{md5}}
+{% endraw %}
+{% endhighlight %}
+</code></pre>
+<p>The addon is almost complete. We just have to add the <code>blueprint</code> which tells the addon to download the javascript library. Up until now we have just referenced the downloaded version in <code>app.import(...)</code>, without specifying how the consumer of the addon should get the library.</p>
+<pre><code>ember g blueprint md-5
+</code></pre>
+<p>In this blueprint we specify that we want to download the library from Bower using the <code>afterInstall</code> hook.</p>
+<pre><code>// blueprints/md-5/index.js
+module.exports = {
+  description: '',
+  normalizeEntityName: function() {},
+  afterInstall: function(options) {
+    return this.addBowerPackageToProject('blueimp-md5');
+  }
+};
+</code></pre>
+<p>This makes the installation a 2 step process. First installing the addon and then generate the blueprint which downloads the library.</p>
+<h2 id="check-that-it-works">Check that it works</h2>
+<p>When developing an addon you might want to test to see if it works. The addon comes with a folder called <code>tests/dummy</code> which has an application where we can use our components. Since this is a small addon we will use the component in <code>application.hbs</code></p>
+<pre><code>{% highlight html %}
+{% raw %}
+// tests/dummy/app/templates/application.hbs
+&lt;h2 id='title'&gt;MD5&lt;/h2&gt;
+&lt;div&gt;
+  {{input type=text value=string}}
+&lt;/div&gt;
+&lt;div&gt;
+  {{md-5 value=string}}
+&lt;/div&gt;
+{% endraw %}
+{% endhighlight %}
+</code></pre>
+<p>By running <code>ember server</code> we can now test that the component works by hashing input on the fly</p>
+<p>If you want to test the addon in another project you can install it locally.</p>
+<pre><code>// In the other project
+npm install ../ember-cli-md5
+ember g md-5
+</code></pre>
+<h2 id="updating-metadata">Updating metadata</h2>
+<p>Each npm package has some metadata like version and URL for the repository. This can be changed in <code>package.json</code>.</p>
+<p><code>version</code> has to be incremented each time you do a <code>npm publish</code>.
+<code>repository</code> is the link to where the source code is located.
+<code>keywords</code> specifies <code>ember-addon</code> so <strong>ember-cli</strong> recognize it as an addon.</p>
+<h2 id="publishing">Publishing</h2>
+<p>Now that we have seen that the component does what we want, it is time to share it with the world. If you have never published a npm package before, you&rsquo;ll need to create an account on npmjs.org. This can be done from the commandline:</p>
+<pre><code>npm adduser
+</code></pre>
+<p>Now we are ready to do a publish</p>
+<pre><code>npm publish
+</code></pre>
+<p>The component is now ready to be installed via npm.</p>
+<pre><code>npm install --save-dev ember-cli-md5
+ember g md-5
+</code></pre>
+
+</div>
+
+
+  </div>
+</section><footer class="footer">
+  <div class="content has-text-centered">
+    
+    
+    <p>
+      
+      
+    </p>
+    
+  </div>
+</footer>
+
+
+</body>
+</html>
