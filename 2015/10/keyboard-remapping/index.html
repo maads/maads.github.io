@@ -9,11 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
     
-    Posts
+    Keyboard Remapping
     
   </title>
   <link rel="stylesheet" href='https://xcv.no/css/site.min.79fe936623aa76027ec7f37e2c1f88575bc07ec92581712940e3dd619a002236e0522d1202b5d1f6df0ddca3a2aea9a163ce58001d960ed138f4f19e83fa83db.css' integrity='sha512-ef6TZiOqdgJ&#43;x/N&#43;LB&#43;IV1vAfsklgXEpQOPdYZoAIjbgUi0SArXR9t8N3KOirqmhY85YAB2WDtE49PGeg/qD2w=='>
-  <link rel="canonical" href="https://xcv.no/posts/">
+  <link rel="canonical" href="https://xcv.no/2015/10/keyboard-remapping/">
   <link rel="alternate" type="application/rss&#43;xml" href="https://xcv.no/index.xml" title="xcv.no">
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -22,12 +22,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="xcv">
-<meta name="description" content="">
+<meta name="description" content="Who uses caps lock anyway? The caps lock key has a nice spot on the keyboard, and it is rarely used compared to other keys on this row. Why not get rid of it, and get an extra control key? Less shouting on the internet, and less fatigue in the little finger.
+How can this be done on Windows? We have to make a change in the registry (Reboot required).">
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xcv.no/posts/" />
+<meta property="og:title" content="Keyboard Remapping" />
+<meta property="og:description" content="Who uses caps lock anyway? The caps lock key has a nice spot on the keyboard, and it is rarely used compared to other keys on this row. Why not get rid of it, and get an extra control key? Less shouting on the internet, and less fatigue in the little finger.
+How can this be done on Windows? We have to make a change in the registry (Reboot required)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xcv.no/2015/10/keyboard-remapping/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-10-04T19:00:00&#43;02:00" />
+<meta property="article:modified_time" content="2015-10-04T19:00:00&#43;02:00" />
 
 
 
@@ -80,56 +84,33 @@
 <section class="hero is-small is-info is-fullwidth">
   <div class="hero-body">
 <div class="container">
-  <article class="media">
-    <div class="media-content">
-      <h1 class="title">
-        Posts tagged with 
-      </h1>
-    </div>
-  </article>
+  <h1 class="title">
+    Keyboard Remapping
+  </h1>
+  <h2 class="subtitle">
+    <time datetime='2015-10-04T19:00:00&#43;02:00'>
+      October 04, 2015
+    </time>
+    
+  </h2>
 </div>
 
   </div>
 </section>
 <section class="section">
   <div class="container">
-<div class="posts">
-  
-  <div class="post">
-    <div><a href="https://xcv.no/2017/10/spring-show-sql-with-params/" class="title is-size-5">Spring Show Sql With Params</a></div>
-    <div class="subtitle is-6">October 26, 2017</div>
-  </div>
-  
-  <div class="post">
-    <div><a href="https://xcv.no/2017/10/sql-developer-code-templates/" class="title is-size-5">Sql Developer Code Templates</a></div>
-    <div class="subtitle is-6">October 26, 2017</div>
-  </div>
-  
-  <div class="post">
-    <div><a href="https://xcv.no/2015/10/keyboard-remapping/" class="title is-size-5">Keyboard Remapping</a></div>
-    <div class="subtitle is-6">October 04, 2015</div>
-  </div>
-  
-  <div class="post">
-    <div><a href="https://xcv.no/2015/04/list-active-network-connections/" class="title is-size-5">List active network connections</a></div>
-    <div class="subtitle is-6">April 28, 2015</div>
-  </div>
-  
-  <div class="post">
-    <div><a href="https://xcv.no/2015/01/mysql-foreign-key/" class="title is-size-5">Mysql Foreign Key</a></div>
-    <div class="subtitle is-6">January 07, 2015</div>
-  </div>
-  
-  <div class="post">
-    <div><a href="https://xcv.no/2014/11/deploy-ember-to-github-pages/" class="title is-size-5">Deploy Ember to Github Pages</a></div>
-    <div class="subtitle is-6">November 29, 2014</div>
-  </div>
-  
-  <div class="post">
-    <div><a href="https://xcv.no/2014/11/ember-cli-addons/" class="title is-size-5">Ember Cli Addons</a></div>
-    <div class="subtitle is-6">November 28, 2014</div>
-  </div>
-  
+<div class="content is-medium">
+  <p>Who uses caps lock anyway? The caps lock key has a nice spot on the keyboard, and it is rarely used compared to other keys on this row. Why not get rid of it, and get an extra control key? Less shouting on the internet, and less fatigue in the little finger.</p>
+<p>How can this be done on Windows? We have to make a change in the registry (Reboot required).</p>
+<pre><code>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+&quot;Scancode Map&quot;=hex:00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00
+</code></pre>
+<p>Files for lazy:</p>
+<p><a href="/files/ChangeCapsToControl.reg">Change caps lock to control</a></p>
+<p><a href="/files/DisableKeyboardRemap.reg">Disable custom keymapping</a></p>
+
 </div>
 
 

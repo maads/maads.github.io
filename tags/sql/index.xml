@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on xcv.no</title>
+    <link>https://xcv.no/tags/sql/</link>
+    <description>Recent content in SQL on xcv.no</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Oct 2017 19:00:00 +0200</lastBuildDate><atom:link href="https://xcv.no/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Show Sql With Params</title>
+      <link>https://xcv.no/2017/10/spring-show-sql-with-params/</link>
+      <pubDate>Thu, 26 Oct 2017 19:00:00 +0200</pubDate>
+      
+      <guid>https://xcv.no/2017/10/spring-show-sql-with-params/</guid>
+      <description>In application.yml set the following properties to show SQL with parameters in the log. By default show-sql only shows you the statement, not the parameters used.
+spring:jpa:# rest of config omittedshow-sql: truelogging:level:org:hibernate:SQL: DEBUGtype:descriptor:sql:BasicBinder: TRACE Works well in JHipster projects.</description>
+    </item>
+    
+    <item>
+      <title>Sql Developer Code Templates</title>
+      <link>https://xcv.no/2017/10/sql-developer-code-templates/</link>
+      <pubDate>Thu, 26 Oct 2017 19:00:00 +0200</pubDate>
+      
+      <guid>https://xcv.no/2017/10/sql-developer-code-templates/</guid>
+      <description>Create and use code templates to save keystrokes.
+ssf CTRL+SPACEinserts SELECT * FROM</description>
+    </item>
+    
+    <item>
+      <title>Mysql Foreign Key</title>
+      <link>https://xcv.no/2015/01/mysql-foreign-key/</link>
+      <pubDate>Wed, 07 Jan 2015 19:00:00 +0200</pubDate>
+      
+      <guid>https://xcv.no/2015/01/mysql-foreign-key/</guid>
+      <description>View all foreign key dependencies for a specific table:
+selectTABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAMEfrom INFORMATION_SCHEMA.KEY_COLUMN_USAGEwhereREFERENCED_TABLE_NAME = &#39;student&#39;; List foreign keys for all tables:
+selectTABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAMEfrom INFORMATION_SCHEMA.KEY_COLUMN_USAGEwhereREFERENCED_TABLE_NAME is not null; </description>
+    </item>
+    
+  </channel>
+</rss>

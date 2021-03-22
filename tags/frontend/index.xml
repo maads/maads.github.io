@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>frontend on xcv.no</title>
+    <link>https://xcv.no/tags/frontend/</link>
+    <description>Recent content in frontend on xcv.no</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Nov 2014 19:00:00 +0200</lastBuildDate><atom:link href="https://xcv.no/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Ember to Github Pages</title>
+      <link>https://xcv.no/2014/11/deploy-ember-to-github-pages/</link>
+      <pubDate>Sat, 29 Nov 2014 19:00:00 +0200</pubDate>
+      
+      <guid>https://xcv.no/2014/11/deploy-ember-to-github-pages/</guid>
+      <description>Given that you are hosting the code for your ember-cli application or addon on Github, you might want to publish it to Github Pages. This is especially nice if you are creating an addon and want to show a demo of how it works.
+Making it ready When hosting on Github Pages the url for your project site will be
+http://yourusername.github.io/projectname To tell the ember-cli application that we are not running on the root domain, we have to update the baseURL in environment.</description>
+    </item>
+    
+    <item>
+      <title>Ember Cli Addons</title>
+      <link>https://xcv.no/2014/11/ember-cli-addons/</link>
+      <pubDate>Fri, 28 Nov 2014 19:00:00 +0200</pubDate>
+      
+      <guid>https://xcv.no/2014/11/ember-cli-addons/</guid>
+      <description>In ember-cli it is easy to reuse code by creating addons. Addons are Ember Components that are published and shared with npm.
+This post will take us through the process of creating an addon for generating MD5 hashes given some input.
+By the end we will have a component that we can use like this
+{% highlight html %}{% raw %}{{md-5 value=&#39;my string&#39;}} // 2ba81a47c5512d9e23c435c1f29373cb{% endraw %}{% endhighlight %} Creating an addon To generate the structure of an addon use</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,88 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Mads</title>
+    <title>Posts on xcv.no</title>
     <link>https://xcv.no/posts/</link>
-    <description>Recent content in Posts on Mads</description>
+    <description>Recent content in Posts on xcv.no</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Oct 2017 19:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://xcv.no/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 26 Oct 2017 19:00:00 +0200</lastBuildDate><atom:link href="https://xcv.no/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring Show Sql With Params</title>
-      <link>https://xcv.no/posts/spring-show-sql-with-params/</link>
+      <link>https://xcv.no/2017/10/spring-show-sql-with-params/</link>
       <pubDate>Thu, 26 Oct 2017 19:00:00 +0200</pubDate>
       
-      <guid>https://xcv.no/posts/spring-show-sql-with-params/</guid>
+      <guid>https://xcv.no/2017/10/spring-show-sql-with-params/</guid>
       <description>In application.yml set the following properties to show SQL with parameters in the log. By default show-sql only shows you the statement, not the parameters used.
 spring:jpa:# rest of config omittedshow-sql: truelogging:level:org:hibernate:SQL: DEBUGtype:descriptor:sql:BasicBinder: TRACE Works well in JHipster projects.</description>
     </item>
     
     <item>
       <title>Sql Developer Code Templates</title>
-      <link>https://xcv.no/posts/sql-developer-code-templates/</link>
+      <link>https://xcv.no/2017/10/sql-developer-code-templates/</link>
       <pubDate>Thu, 26 Oct 2017 19:00:00 +0200</pubDate>
       
-      <guid>https://xcv.no/posts/sql-developer-code-templates/</guid>
+      <guid>https://xcv.no/2017/10/sql-developer-code-templates/</guid>
       <description>Create and use code templates to save keystrokes.
 ssf CTRL+SPACEinserts SELECT * FROM</description>
     </item>
     
     <item>
       <title>Keyboard Remapping</title>
-      <link>https://xcv.no/posts/keyboard-remapping/</link>
+      <link>https://xcv.no/2015/10/keyboard-remapping/</link>
       <pubDate>Sun, 04 Oct 2015 19:00:00 +0200</pubDate>
       
-      <guid>https://xcv.no/posts/keyboard-remapping/</guid>
+      <guid>https://xcv.no/2015/10/keyboard-remapping/</guid>
       <description>Who uses caps lock anyway? The caps lock key has a nice spot on the keyboard, and it is rarely used compared to other keys on this row. Why not get rid of it, and get an extra control key? Less shouting on the internet, and less fatigue in the little finger.
 How can this be done on Windows? We have to make a change in the registry (Reboot required).</description>
     </item>
     
     <item>
       <title>List active network connections</title>
-      <link>https://xcv.no/posts/active-network-connections/</link>
+      <link>https://xcv.no/2015/04/list-active-network-connections/</link>
       <pubDate>Tue, 28 Apr 2015 19:00:00 +0200</pubDate>
       
-      <guid>https://xcv.no/posts/active-network-connections/</guid>
+      <guid>https://xcv.no/2015/04/list-active-network-connections/</guid>
       <description>I ran into a problem stating that port 8080 was already taken. Here is an easy way of finding out what application is occupying what ports. netstat displays incoming and outgoing network connections. (This operation requires cmd (or equivalent) running as administrator because of the -b parameter which shows the program name.)
-netstat -a -b -o  In this list I could see what application I had to change in order to get port 8080 back.</description>
+netstat -a -b -o In this list I could see what application I had to change in order to get port 8080 back.</description>
     </item>
     
     <item>
       <title>Mysql Foreign Key</title>
-      <link>https://xcv.no/posts/mysql-foreign-key/</link>
+      <link>https://xcv.no/2015/01/mysql-foreign-key/</link>
       <pubDate>Wed, 07 Jan 2015 19:00:00 +0200</pubDate>
       
-      <guid>https://xcv.no/posts/mysql-foreign-key/</guid>
+      <guid>https://xcv.no/2015/01/mysql-foreign-key/</guid>
       <description>View all foreign key dependencies for a specific table:
-select TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME from INFORMATION_SCHEMA.KEY_COLUMN_USAGE where REFERENCED_TABLE_NAME = &#39;student&#39;;  List foreign keys for all tables:
-select TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME from INFORMATION_SCHEMA.KEY_COLUMN_USAGE where REFERENCED_TABLE_NAME is not null; </description>
+selectTABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAMEfrom INFORMATION_SCHEMA.KEY_COLUMN_USAGEwhereREFERENCED_TABLE_NAME = &#39;student&#39;; List foreign keys for all tables:
+selectTABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAMEfrom INFORMATION_SCHEMA.KEY_COLUMN_USAGEwhereREFERENCED_TABLE_NAME is not null; </description>
     </item>
     
     <item>
       <title>Deploy Ember to Github Pages</title>
-      <link>https://xcv.no/posts/deploy-ember-to-github-pages/</link>
+      <link>https://xcv.no/2014/11/deploy-ember-to-github-pages/</link>
       <pubDate>Sat, 29 Nov 2014 19:00:00 +0200</pubDate>
       
-      <guid>https://xcv.no/posts/deploy-ember-to-github-pages/</guid>
+      <guid>https://xcv.no/2014/11/deploy-ember-to-github-pages/</guid>
       <description>Given that you are hosting the code for your ember-cli application or addon on Github, you might want to publish it to Github Pages. This is especially nice if you are creating an addon and want to show a demo of how it works.
 Making it ready When hosting on Github Pages the url for your project site will be
-http://yourusername.github.io/projectname  To tell the ember-cli application that we are not running on the root domain, we have to update the baseURL in environment.</description>
+http://yourusername.github.io/projectname To tell the ember-cli application that we are not running on the root domain, we have to update the baseURL in environment.</description>
     </item>
     
     <item>
       <title>Ember Cli Addons</title>
-      <link>https://xcv.no/posts/ember-cli-addons/</link>
+      <link>https://xcv.no/2014/11/ember-cli-addons/</link>
       <pubDate>Fri, 28 Nov 2014 19:00:00 +0200</pubDate>
       
-      <guid>https://xcv.no/posts/ember-cli-addons/</guid>
+      <guid>https://xcv.no/2014/11/ember-cli-addons/</guid>
       <description>In ember-cli it is easy to reuse code by creating addons. Addons are Ember Components that are published and shared with npm.
 This post will take us through the process of creating an addon for generating MD5 hashes given some input.
 By the end we will have a component that we can use like this
-{% highlight html %} {% raw %} {{md-5 value=&#39;my string&#39;}} // 2ba81a47c5512d9e23c435c1f29373cb {% endraw %} {% endhighlight %}  Creating an addon To generate the structure of an addon use</description>
+{% highlight html %}{% raw %}{{md-5 value=&#39;my string&#39;}} // 2ba81a47c5512d9e23c435c1f29373cb{% endraw %}{% endhighlight %} Creating an addon To generate the structure of an addon use</description>
     </item>
     
   </channel>
